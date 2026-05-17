@@ -1,1 +1,946 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional Physical Therapy Clinic offering rehabilitation, pain management, sports injury recovery, and expert therapy care." />
+  <meta name="keywords" content="physical therapy, rehabilitation, pain management, sports injury, physical therapist" />
+  <title>PhysioElite Clinic – Restore Movement. Relieve Pain. Live Better.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+      <div class="logo-text">
+        <span class="logo-primary">Physio</span><span class="logo-accent">Elite</span>
+        <small>Physical Therapy Clinic</small>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#doctors" class="nav-link">Doctors</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn-book">
+      <i class="fas fa-calendar-check"></i> Book Appointment
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-pattern"></div>
+  </div>
+
+  <!-- Floating medical elements -->
+  <div class="float-el float-1"><i class="fas fa-heartbeat"></i></div>
+  <div class="float-el float-2"><i class="fas fa-stethoscope"></i></div>
+  <div class="float-el float-3"><i class="fas fa-dna"></i></div>
+  <div class="float-el float-4"><i class="fas fa-pills"></i></div>
+  <div class="float-el float-5"><i class="fas fa-heart"></i></div>
+  <div class="float-el float-6"><i class="fas fa-user-md"></i></div>
+
+  <div class="hero-container">
+    <div class="hero-content" data-aos="fade-right">
+      <div class="hero-badge">
+        <i class="fas fa-award"></i> Premier Physical Therapy Center
+      </div>
+      <h1 class="hero-title">
+        Restore <span class="highlight">Movement.</span><br>
+        Relieve <span class="highlight">Pain.</span><br>
+        Live <span class="highlight">Better.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Expert rehabilitation, advanced therapy techniques, and personalized recovery programs designed to help you regain your strength, mobility, and quality of life.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <i class="fas fa-calendar-check"></i> Book Appointment
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fas fa-phone"></i> Contact Us
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Certified Specialists</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-clock"></i>
+          <span>Same-Day Appointments</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-star"></i>
+          <span>5-Star Rated Clinic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-aos="fade-left">
+      <div class="hero-card-main">
+        <img src="assets/images/device_1.jpeg" alt="Advanced Physical Therapy Equipment" />
+        <div class="hero-card-badge">
+          <i class="fas fa-check-circle"></i> Advanced Equipment
+        </div>
+      </div>
+      <div class="hero-card-float card-f1">
+        <i class="fas fa-running"></i>
+        <div>
+          <strong>Sports Recovery</strong>
+          <small>Expert Care</small>
+        </div>
+      </div>
+      <div class="hero-card-float card-f2">
+        <i class="fas fa-smile"></i>
+        <div>
+          <strong>2000+</strong>
+          <small>Happy Patients</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Who We Are</span>
+      <h2 class="section-title">Dedicated to Your <span class="text-blue">Recovery & Wellbeing</span></h2>
+      <p class="section-sub">Our clinic combines cutting-edge technology with compassionate care to deliver exceptional physical therapy outcomes.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-img-wrap">
+          <img src="assets/images/device_2.jpeg" alt="Therapy Session" class="about-img-main" />
+          <img src="assets/images/device_3.jpeg" alt="Clinic Equipment" class="about-img-secondary" />
+          <div class="about-badge-exp">
+            <strong>10+</strong>
+            <span>Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content" data-aos="fade-left">
+        <h3 class="about-heading">Your Trusted Partner in Physical Rehabilitation</h3>
+        <p class="about-text">
+          At PhysioElite, we specialize in comprehensive physical therapy services including <strong>pain management</strong>, <strong>sports injury rehabilitation</strong>, <strong>post-surgical recovery</strong>, <strong>posture correction</strong>, and <strong>movement optimization</strong>.
+        </p>
+        <p class="about-text">
+          Our team of certified therapists uses evidence-based techniques and state-of-the-art equipment to create personalized treatment plans that deliver real, lasting results.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Evidence-Based Treatment Protocols</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Advanced Electrotherapy & Laser Equipment</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Personalized Recovery Programs</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Sports & Post-Surgical Rehabilitation</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Certified & Experienced Specialists</span>
+          </div>
+        </div>
+
+        <a href="#services" class="btn-primary mt-20">
+          <i class="fas fa-arrow-right"></i> Explore Our Services
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid" data-aos="fade-up">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-suffix">+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-number" data-target="2000">0</div>
+        <div class="stat-suffix">+</div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-hand-holding-medical"></i></div>
+        <div class="stat-number" data-target="15000">0</div>
+        <div class="stat-suffix">+</div>
+        <div class="stat-label">Therapy Sessions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+        <div class="stat-number" data-target="4">0</div>
+        <div class="stat-suffix">+</div>
+        <div class="stat-label">Professional Specialists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES SECTION ===== -->
+<section class="services" id="services">
+  <div class="services-bg-pattern"></div>
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-title">Our <span class="text-blue">Therapy Services</span></h2>
+      <p class="section-sub">Comprehensive physical therapy services powered by advanced equipment and expert specialists.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_1.jpeg" alt="Electrotherapy" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Electrotherapy</h3>
+          <p>Advanced electrical stimulation therapy to reduce pain, promote tissue healing, and restore muscular function.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Pain Relief</li>
+            <li><i class="fas fa-check"></i> Muscle Re-education</li>
+            <li><i class="fas fa-check"></i> Tissue Repair</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_2.jpeg" alt="Laser Therapy" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
+          <h3>Laser Therapy</h3>
+          <p>Low-level laser therapy (LLLT) to accelerate healing, reduce inflammation, and alleviate chronic pain conditions.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Anti-inflammatory</li>
+            <li><i class="fas fa-check"></i> Accelerated Healing</li>
+            <li><i class="fas fa-check"></i> Non-Invasive</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_3.jpeg" alt="Ultrasound Therapy" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-wave-square"></i></div>
+          <h3>Ultrasound Therapy</h3>
+          <p>Therapeutic ultrasound for deep tissue heating, improving circulation and accelerating soft tissue recovery.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Deep Tissue Healing</li>
+            <li><i class="fas fa-check"></i> Circulation Boost</li>
+            <li><i class="fas fa-check"></i> Scar Tissue Reduction</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_4.jpeg" alt="Sports Rehabilitation" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-running"></i></div>
+          <h3>Sports Rehabilitation</h3>
+          <p>Specialized programs for athletes recovering from sports injuries, designed to restore peak performance safely.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Injury Recovery</li>
+            <li><i class="fas fa-check"></i> Performance Optimization</li>
+            <li><i class="fas fa-check"></i> Return-to-Sport Protocol</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_5.jpeg" alt="Post Surgery Rehabilitation" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-procedures"></i></div>
+          <h3>Post-Surgery Rehabilitation</h3>
+          <p>Comprehensive post-operative therapy programs to restore function, strength, and mobility after surgery.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Faster Recovery</li>
+            <li><i class="fas fa-check"></i> Reduced Complications</li>
+            <li><i class="fas fa-check"></i> Full Mobility Restoration</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_6.jpeg" alt="Pain Management" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Pain Management</h3>
+          <p>Multimodal pain management strategies combining manual therapy, modalities, and therapeutic exercises.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Chronic Pain Relief</li>
+            <li><i class="fas fa-check"></i> Drug-Free Approach</li>
+            <li><i class="fas fa-check"></i> Long-Term Results</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_7.jpeg" alt="Muscle Stimulation" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-charging-station"></i></div>
+          <h3>Muscle Stimulation</h3>
+          <p>Neuromuscular electrical stimulation (NMES) to re-activate weakened muscles and improve motor control.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Muscle Activation</li>
+            <li><i class="fas fa-check"></i> Strength Building</li>
+            <li><i class="fas fa-check"></i> Nerve Re-education</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_8.jpeg" alt="Manual Therapy" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-hands"></i></div>
+          <h3>Manual Therapy</h3>
+          <p>Hands-on mobilization and manipulation techniques to restore joint mobility and relieve musculoskeletal pain.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Joint Mobilization</li>
+            <li><i class="fas fa-check"></i> Soft Tissue Release</li>
+            <li><i class="fas fa-check"></i> Improved Flexibility</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-img-wrap">
+          <img src="assets/images/device_9.jpeg" alt="Dry Needling" />
+          <div class="service-overlay">
+            <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+          </div>
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><i class="fas fa-syringe"></i></div>
+          <h3>Dry Needling</h3>
+          <p>Precision trigger point dry needling to release myofascial tension and eliminate deep muscular pain patterns.</p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Trigger Point Release</li>
+            <li><i class="fas fa-check"></i> Myofascial Relief</li>
+            <li><i class="fas fa-check"></i> Rapid Pain Reduction</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOCTORS SECTION ===== -->
+<section class="doctors" id="doctors">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Team</span>
+      <h2 class="section-title">Meet Our <span class="text-blue">Expert Specialists</span></h2>
+      <p class="section-sub">Our certified therapists bring years of clinical experience and a genuine passion for patient recovery.</p>
+    </div>
+
+    <div class="doctors-grid">
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="doctor-img-wrap">
+          <div class="doctor-avatar"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-exp-badge">10+ Yrs</div>
+        </div>
+        <div class="doctor-body">
+          <h3 class="doctor-name">Dr. Abdul-Moneam Kamal</h3>
+          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> Senior Physical Therapist</p>
+          <p class="doctor-bio">Specialist in musculoskeletal rehabilitation and advanced electrotherapy. Expert in chronic pain management and sports injury recovery.</p>
+          <div class="doctor-tags">
+            <span>Musculoskeletal</span>
+            <span>Electrotherapy</span>
+            <span>Sports</span>
+          </div>
+          <div class="doctor-socials">
+            <a href="https://wa.me/201095408771" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:01095408771" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            <a href="mailto:meneamkamal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="doctor-img-wrap">
+          <div class="doctor-avatar female"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-exp-badge">7+ Yrs</div>
+        </div>
+        <div class="doctor-body">
+          <h3 class="doctor-name">Dr. Menna Emad</h3>
+          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> Rehabilitation Therapist</p>
+          <p class="doctor-bio">Dedicated specialist in post-surgical rehabilitation and neurological physiotherapy, helping patients regain full functional independence.</p>
+          <div class="doctor-tags">
+            <span>Post-Surgery</span>
+            <span>Neurological</span>
+            <span>Rehab</span>
+          </div>
+          <div class="doctor-socials">
+            <a href="https://wa.me/201095408771" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:01095408771" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            <a href="mailto:meneamkamal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="doctor-img-wrap">
+          <div class="doctor-avatar"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-exp-badge">8+ Yrs</div>
+        </div>
+        <div class="doctor-body">
+          <h3 class="doctor-name">Dr. Bassem Al-falala</h3>
+          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> Sports & Manual Therapist</p>
+          <p class="doctor-bio">Expert in sports performance rehabilitation and manual therapy techniques, working with elite athletes and active individuals.</p>
+          <div class="doctor-tags">
+            <span>Manual Therapy</span>
+            <span>Sports</span>
+            <span>Performance</span>
+          </div>
+          <div class="doctor-socials">
+            <a href="https://wa.me/201095408771" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:01095408771" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            <a href="mailto:meneamkamal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="doctor-img-wrap">
+          <div class="doctor-avatar female"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-exp-badge">6+ Yrs</div>
+        </div>
+        <div class="doctor-body">
+          <h3 class="doctor-name">Dr. Hemmat Hassan</h3>
+          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> Pain Management Specialist</p>
+          <p class="doctor-bio">Specialist in chronic pain management, dry needling, and therapeutic ultrasound for complex musculoskeletal conditions.</p>
+          <div class="doctor-tags">
+            <span>Pain Management</span>
+            <span>Dry Needling</span>
+            <span>Ultrasound</span>
+          </div>
+          <div class="doctor-socials">
+            <a href="https://wa.me/201095408771" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:01095408771" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            <a href="mailto:meneamkamal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY SECTION ===== -->
+<section class="gallery" id="gallery">
+  <div class="gallery-bg"></div>
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Clinic</span>
+      <h2 class="section-title">Clinic <span class="text-blue">Gallery</span></h2>
+      <p class="section-sub">A glimpse into our state-of-the-art facility and advanced therapy equipment.</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item gallery-item-lg" data-aos="fade-up" data-aos-delay="0">
+        <img src="assets/images/device_1.jpeg" alt="Therapy Equipment 1" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(0)"><i class="fas fa-expand"></i></button>
+          <p>Advanced Therapy Equipment</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="60">
+        <img src="assets/images/device_2.jpeg" alt="Therapy Equipment 2" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(1)"><i class="fas fa-expand"></i></button>
+          <p>Rehabilitation Session</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="120">
+        <img src="assets/images/device_3.jpeg" alt="Therapy Equipment 3" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(2)"><i class="fas fa-expand"></i></button>
+          <p>Ultrasound Therapy Unit</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="180">
+        <img src="assets/images/device_4.jpeg" alt="Therapy Equipment 4" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(3)"><i class="fas fa-expand"></i></button>
+          <p>Sports Rehab Station</p>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item-lg" data-aos="fade-up" data-aos-delay="240">
+        <img src="assets/images/device_5.jpeg" alt="Therapy Equipment 5" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(4)"><i class="fas fa-expand"></i></button>
+          <p>Post-Surgery Recovery</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="assets/images/device_6.jpeg" alt="Therapy Equipment 6" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(5)"><i class="fas fa-expand"></i></button>
+          <p>Pain Management Device</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="360">
+        <img src="assets/images/device_7.jpeg" alt="Therapy Equipment 7" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(6)"><i class="fas fa-expand"></i></button>
+          <p>Muscle Stimulation Unit</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="420">
+        <img src="assets/images/device_8.jpeg" alt="Therapy Equipment 8" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(7)"><i class="fas fa-expand"></i></button>
+          <p>Manual Therapy Tools</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="480">
+        <img src="assets/images/device_9.jpeg" alt="Therapy Equipment 9" />
+        <div class="gallery-overlay">
+          <button class="gallery-zoom" onclick="openLightbox(8)"><i class="fas fa-expand"></i></button>
+          <p>Dry Needling Setup</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+  <button class="lightbox-prev" onclick="changeLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+  <button class="lightbox-next" onclick="changeLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="Gallery Image" />
+  </div>
+</div>
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Patient Stories</span>
+      <h2 class="section-title">What Our <span class="text-blue">Patients Say</span></h2>
+      <p class="section-sub">Real recovery stories from patients who trusted us with their health.</p>
+    </div>
+
+    <div class="testimonials-slider" data-aos="fade-up">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"After my knee surgery, I was worried I'd never run again. The team at PhysioElite designed a personalized program that had me back on the track in 4 months. Absolutely life-changing!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>Ahmed Mostafa</strong>
+              <small>Post-Knee Surgery Recovery</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"I had chronic lower back pain for 3 years. After just 8 sessions of laser therapy and manual therapy, the pain is gone. The doctors here are truly exceptional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar female"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>Sara Ibrahim</strong>
+              <small>Chronic Back Pain Relief</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"As a football player, injuries are part of the game. PhysioElite's sports rehabilitation program got me back to full fitness faster than I expected. Highly recommend Dr. Bassem!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>Omar Khalil</strong>
+              <small>Sports Injury Recovery</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"The electrotherapy sessions completely transformed my recovery from a shoulder injury. The staff is professional, caring, and the facilities are world-class."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar female"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>Nour Hassan</strong>
+              <small>Shoulder Rehabilitation</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Dr. Hemmat's pain management approach using dry needling changed my life. I can now walk without pain for the first time in years. Thank you PhysioElite!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>Karim Youssef</strong>
+              <small>Chronic Pain Management</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="testimonials-controls">
+        <button class="t-btn t-prev" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-btn t-next" id="tNext"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Contact <span class="text-blue">Our Clinic</span></h2>
+      <p class="section-sub">Book an appointment or reach out — our team is ready to help you start your recovery journey.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info" data-aos="fade-right">
+        <div class="contact-info-card">
+          <h3>Clinic Information</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-detail">
+              <strong>Phone Numbers</strong>
+              <a href="tel:01095408771">01095408771</a>
+              <a href="tel:01140411181">01140411181</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail">
+              <strong>Email Address</strong>
+              <a href="mailto:meneamkamal@gmail.com">meneamkamal@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-detail">
+              <strong>Working Hours</strong>
+              <span>Sat – Thu: 9:00 AM – 9:00 PM</span>
+              <span>Friday: 2:00 PM – 9:00 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-detail">
+              <strong>Location</strong>
+              <span>View on Google Maps below</span>
+            </div>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <a href="https://wa.me/201095408771?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+          </a>
+
+          <!-- Social Media -->
+          <div class="contact-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap" data-aos="fade-left">
+        <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+          <h3>Book an Appointment</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Electrotherapy</option>
+              <option>Laser Therapy</option>
+              <option>Ultrasound Therapy</option>
+              <option>Sports Rehabilitation</option>
+              <option>Post-Surgery Rehabilitation</option>
+              <option>Pain Management</option>
+              <option>Muscle Stimulation</option>
+              <option>Manual Therapy</option>
+              <option>Dry Needling</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message / Notes</label>
+            <textarea id="message" name="message" placeholder="Describe your condition or any special requirements..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <i class="fas fa-paper-plane"></i> Send Appointment Request
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i> Your request has been sent! We'll contact you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-wrap" data-aos="fade-up">
+      <h3 class="map-title"><i class="fas fa-map-marker-alt"></i> Find Us</h3>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.1234567890!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjkiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sen!2seg!4v1234567890!5m2!1sen!2seg"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="PhysioElite Clinic Location">
+        </iframe>
+        <div class="map-link-overlay">
+          <a href="https://maps.app.goo.gl/X6ZkuvJEQuM3YxNU8" target="_blank" rel="noopener" class="map-open-btn">
+            <i class="fas fa-external-link-alt"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="logo-text">
+              <span class="logo-primary">Physio</span><span class="logo-accent">Elite</span>
+            </div>
+          </div>
+          <p class="footer-desc">Premier physical therapy clinic dedicated to restoring movement, relieving pain, and helping you live a better life.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/201095408771" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="#doctors"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Electrotherapy</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Laser Therapy</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Sports Rehabilitation</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Pain Management</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Manual Therapy</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> Dry Needling</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <a href="tel:01095408771">01095408771</a><br>
+              <a href="tel:01140411181">01140411181</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:meneamkamal@gmail.com">meneamkamal@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span>Sat–Thu: 9AM – 9PM</span><br>
+              <span>Fri: 2PM – 9PM</span>
+            </div>
+          </div>
+          <a href="https://wa.me/201095408771?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p>&copy; 2026 PhysioElite Physical Therapy Clinic. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          <i class="fas fa-info-circle"></i>
+          Medical Disclaimer: The information on this website is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/201095408771?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
