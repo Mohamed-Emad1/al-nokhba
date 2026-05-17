@@ -209,17 +209,17 @@ function handleFormSubmit(e) {
   const btn = form.querySelector('button[type="submit"]');
   const success = document.getElementById('formSuccess');
 
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جارٍ الإرسال...';
   btn.disabled = true;
 
   setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-check"></i> Request Sent!';
+    btn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال!';
     btn.style.background = 'linear-gradient(135deg, #16a34a, #15803d)';
     success.classList.add('show');
     form.reset();
 
     setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Appointment Request';
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال طلب الحجز';
       btn.style.background = '';
       btn.disabled = false;
       success.classList.remove('show');
@@ -238,6 +238,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       window.scrollTo({ top, behavior: 'smooth' });
     }
   });
+});
+
+/* ===== VIDEO PROMO ===== */
+function playVideo() {
+  const video = document.getElementById('promoVideo');
+  const overlay = document.getElementById('videoOverlay');
+  if (!video) return;
+  overlay.classList.add('hidden');
+  video.controls = true;
+  video.play();
+}
+
+// Restore overlay if video ends
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('promoVideo');
+  if (video) {
+    video.addEventListener('ended', () => {
+      const overlay = document.getElementById('videoOverlay');
+      overlay.classList.remove('hidden');
+      video.controls = false;
+      video.currentTime = 0;
+    });
+  }
 });
 
 /* ===== INIT ===== */
