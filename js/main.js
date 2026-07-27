@@ -107,6 +107,10 @@ const galleryImages = [
   { src: 'assets/images/tens-therapy.jpeg', label: 'جهاز التنس' },
   { src: 'assets/images/cryotherapy.jpeg', label: 'العلاج بالتبريد' },
   { src: 'assets/images/cavitation.jpeg', label: 'الكافيتيشن' },
+  { src: 'assets/images/sports-rehab-unit-1.jpeg', label: 'وحدة تأهيل رياضي متكاملة' },
+  { src: 'assets/images/sports-rehab-unit-2.jpeg', label: 'وحدة تأهيل رياضي متكاملة' },
+  { src: 'assets/images/office_1.jpeg', label: 'عيادتنا' },
+  { src: 'assets/images/office_2.jpeg', label: 'عيادتنا' },
 ];
 let currentLightboxIndex = 0;
 
