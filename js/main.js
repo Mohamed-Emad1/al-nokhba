@@ -98,15 +98,15 @@ function initCounters() {
 
 /* ===== LIGHTBOX ===== */
 const galleryImages = [
-  { src: 'assets/images/device_1.jpeg', label: 'Advanced Therapy Equipment' },
-  { src: 'assets/images/device_2.jpeg', label: 'Rehabilitation Session' },
-  { src: 'assets/images/device_3.jpeg', label: 'Ultrasound Therapy Unit' },
-  { src: 'assets/images/device_4.jpeg', label: 'Sports Rehab Station' },
-  { src: 'assets/images/device_5.jpeg', label: 'Post-Surgery Recovery' },
-  { src: 'assets/images/device_6.jpeg', label: 'Pain Management Device' },
-  { src: 'assets/images/device_7.jpeg', label: 'Muscle Stimulation Unit' },
-  { src: 'assets/images/device_8.jpeg', label: 'Manual Therapy Tools' },
-  { src: 'assets/images/device_9.jpeg', label: 'Dry Needling Setup' },
+  { src: 'assets/images/shockwave-therapy.jpeg', label: 'العلاج بموجات الصدمة' },
+  { src: 'assets/images/low-level-laser-therapy.jpeg', label: 'العلاج بالليزر منخفض الشدة' },
+  { src: 'assets/images/ultrasound-therapy.jpeg', label: 'العلاج بالموجات فوق الصوتية' },
+  { src: 'assets/images/heat-pads.jpeg', label: 'وسائد التدفئة' },
+  { src: 'assets/images/traction-therapy.jpeg', label: 'علاج الشد' },
+  { src: 'assets/images/massage-gun.jpeg', label: 'مسدس التدليك' },
+  { src: 'assets/images/tens-therapy.jpeg', label: 'جهاز التنس' },
+  { src: 'assets/images/cryotherapy.jpeg', label: 'العلاج بالتبريد' },
+  { src: 'assets/images/cavitation.jpeg', label: 'الكافيتيشن' },
 ];
 let currentLightboxIndex = 0;
 
@@ -247,6 +247,7 @@ function playVideo() {
   if (!video) return;
   overlay.classList.add('hidden');
   video.controls = true;
+  video.muted = true;
   video.play();
 }
 

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 </head>
 <body>
 
@@ -18,11 +19,7 @@
 <header class="navbar" id="navbar">
   <div class="nav-container">
     <a href="#home" class="nav-logo">
-      <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
-      <div class="logo-text">
-        <span class="logo-primary">مركز النخبة</span>
-        <small>للعلاج الطبيعي للسمنة والنحافة</small>
-      </div>
+      <img src="assets/images/logo-horizontal.png" alt="مركز النخبة للعلاج الطبيعي وإدارة الوزن" class="nav-logo-img" />
     </a>
 
     <nav class="nav-links" id="navLinks">
@@ -35,7 +32,7 @@
     </nav>
 
     <a href="#contact" class="btn-book">
-      <i class="fas fa-calendar-check"></i> احجز موعدًا
+      <i class="fas fa-calendar-check"></i> تواصل معنا
     </a>
 
     <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
@@ -100,7 +97,7 @@
 
     <div class="hero-visual" data-aos="fade-left">
       <div class="hero-card-main">
-        <img src="assets/images/device_1.jpeg" alt="معدات العلاج الطبيعي المتطورة" />
+        <img src="assets/images/shockwave-therapy.jpeg" alt="معدات العلاج الطبيعي المتطورة" />
         <div class="hero-card-badge">
           <i class="fas fa-check-circle"></i> معدات متطورة
         </div>
@@ -141,8 +138,8 @@
     <div class="about-grid">
       <div class="about-visual" data-aos="fade-right">
         <div class="about-img-wrap">
-          <img src="assets/images/device_2.jpeg" alt="جلسة علاجية" class="about-img-main" />
-          <img src="assets/images/device_3.jpeg" alt="معدات العيادة" class="about-img-secondary" />
+          <img src="assets/images/ultrasound-therapy.jpeg" alt="جلسة علاجية" class="about-img-main" />
+          <img src="assets/images/traction-therapy.jpeg" alt="معدات العيادة" class="about-img-secondary" />
           <div class="about-badge-exp">
             <strong>10+</strong>
             <span>سنوات من التميز</span>
@@ -230,7 +227,7 @@
 
     <div class="video-outer" data-aos="fade-up" data-aos-delay="100">
       <div class="video-wrapper">
-        <video id="promoVideo" poster="assets/images/device_1.jpeg" preload="metadata" playsinline>
+        <video id="promoVideo" poster="assets/images/shockwave-therapy.jpeg" preload="metadata" playsinline muted>
           <source src="assets/images/video.mp4" type="video/mp4" />
         </video>
         <div class="video-play-overlay" id="videoOverlay" onclick="playVideo()">
@@ -286,19 +283,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-img-wrap">
-          <img src="assets/images/device_1.jpeg" alt="العلاج الكهربائي" />
+          <img src="assets/images/shockwave-therapy.jpeg" alt="العلاج بموجات الصدمة" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
           <div class="service-icon"><i class="fas fa-bolt"></i></div>
-          <h3>العلاج الكهربائي</h3>
-          <p>علاج تحفيزي كهربائي متقدم يقلل الألم ويعزز التئام الأنسجة ويستعيد الوظيفة العضلية.</p>
+          <h3>العلاج بموجات الصدمة</h3>
+          <p>علاج طبي غير جراحي يستخدم موجات صوتية عالية الطاقة لتخفيف الألم وتحفيز الدورة الدموية ومساعدة الجسم على شفاء الأنسجة الرخوة والعظام المصابة.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تخفيف الألم</li>
-            <li><i class="fas fa-check"></i> إعادة تعليم العضلات</li>
-            <li><i class="fas fa-check"></i> إصلاح الأنسجة</li>
+            <li><i class="fas fa-check"></i> تخفيف الألم المزمن</li>
+            <li><i class="fas fa-check"></i> تحفيز الدورة الدموية</li>
+            <li><i class="fas fa-check"></i> تسريع التئام الأنسجة</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -306,19 +303,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="80">
         <div class="service-img-wrap">
-          <img src="assets/images/device_2.jpeg" alt="العلاج بالليزر" />
+          <img src="assets/images/low-level-laser-therapy.jpeg" alt="العلاج بالليزر منخفض الشدة" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
           <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
-          <h3>العلاج بالليزر</h3>
-          <p>العلاج بالليزر منخفض الشدة لتسريع الشفاء وتقليل الالتهاب وتخفيف الألم المزمن.</p>
+          <h3>العلاج بالليزر منخفض الشدة</h3>
+          <p>يستخدم ضوءًا أحمر وتحت أحمر منخفض القدرة لتقليل الألم والالتهاب، وتعزيز التئام الأنسجة بشكل طبيعي وآمن.</p>
           <ul class="service-benefits">
             <li><i class="fas fa-check"></i> مضاد للالتهاب</li>
             <li><i class="fas fa-check"></i> تسريع الشفاء</li>
-            <li><i class="fas fa-check"></i> غير جراحي</li>
+            <li><i class="fas fa-check"></i> غير جراحي وبلا ألم</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -326,7 +323,7 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="160">
         <div class="service-img-wrap">
-          <img src="assets/images/device_3.jpeg" alt="العلاج بالموجات فوق الصوتية" />
+          <img src="assets/images/ultrasound-therapy.jpeg" alt="العلاج بالموجات فوق الصوتية" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
@@ -334,11 +331,11 @@
         <div class="service-body">
           <div class="service-icon"><i class="fas fa-wave-square"></i></div>
           <h3>العلاج بالموجات فوق الصوتية</h3>
-          <p>علاج بالموجات فوق الصوتية للتسخين العميق للأنسجة وتحسين الدورة الدموية وتسريع التعافي.</p>
+          <p>يستخدم موجات صوتية عالية التردد تُطبَّق على الجلد لتوليد حرارة عميقة واهتزازات دقيقة داخل الأنسجة الرخوة.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> علاج الأنسجة العميقة</li>
+            <li><i class="fas fa-check"></i> تسخين عميق للأنسجة</li>
             <li><i class="fas fa-check"></i> تحسين الدورة الدموية</li>
-            <li><i class="fas fa-check"></i> تقليل ندبات الأنسجة</li>
+            <li><i class="fas fa-check"></i> تسريع التعافي</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -346,19 +343,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-img-wrap">
-          <img src="assets/images/device_4.jpeg" alt="إعادة التأهيل الرياضي" />
+          <img src="assets/images/heat-pads.jpeg" alt="وسائد التدفئة" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
-          <div class="service-icon"><i class="fas fa-running"></i></div>
-          <h3>إعادة التأهيل الرياضي</h3>
-          <p>برامج متخصصة للرياضيين المتعافين من الإصابات، مصممة لاستعادة الأداء الرياضي بأمان.</p>
+          <div class="service-icon"><i class="fas fa-temperature-high"></i></div>
+          <h3>وسائد التدفئة</h3>
+          <p>جهاز محمول يوفر حرارة موضعية لتخفيف آلام العضلات وتيبس المفاصل، ويساعد أيضًا في تسكين تقلصات الدورة الشهرية.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تعافٍ من الإصابة</li>
-            <li><i class="fas fa-check"></i> تحسين الأداء</li>
-            <li><i class="fas fa-check"></i> بروتوكول العودة للرياضة</li>
+            <li><i class="fas fa-check"></i> تخفيف آلام العضلات</li>
+            <li><i class="fas fa-check"></i> تقليل تيبس المفاصل</li>
+            <li><i class="fas fa-check"></i> راحة من تقلصات الدورة</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -366,19 +363,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="80">
         <div class="service-img-wrap">
-          <img src="assets/images/device_5.jpeg" alt="إعادة التأهيل بعد الجراحة" />
+          <img src="assets/images/traction-therapy.jpeg" alt="علاج الشد" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
-          <div class="service-icon"><i class="fas fa-procedures"></i></div>
-          <h3>إعادة التأهيل بعد الجراحة</h3>
-          <p>برامج علاجية شاملة لما بعد الجراحة لاستعادة الوظيفة والقوة والحركة الكاملة.</p>
+          <div class="service-icon"><i class="fas fa-arrows-alt-v"></i></div>
+          <h3>علاج الشد</h3>
+          <p>علاج سريري يُطبّق قوة شد على العمود الفقري أو المفاصل بتقنيات يدوية أو أجهزة متخصصة لتخفيف الضغط والألم وتحسين الحركة.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تعافٍ أسرع</li>
-            <li><i class="fas fa-check"></i> تقليل المضاعفات</li>
-            <li><i class="fas fa-check"></i> استعادة كاملة للحركة</li>
+            <li><i class="fas fa-check"></i> تخفيف الضغط على الفقرات</li>
+            <li><i class="fas fa-check"></i> تحسين المرونة</li>
+            <li><i class="fas fa-check"></i> تقليل آلام الظهر والرقبة</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -386,19 +383,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="160">
         <div class="service-img-wrap">
-          <img src="assets/images/device_6.jpeg" alt="إدارة الألم" />
+          <img src="assets/images/massage-gun.jpeg" alt="مسدس التدليك" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
           <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
-          <h3>إدارة الألم</h3>
-          <p>استراتيجيات متعددة الأوجه لإدارة الألم تجمع بين العلاج اليدوي والتقنيات والتمارين العلاجية.</p>
+          <h3>مسدس التدليك</h3>
+          <p>أداة محمولة قابلة لإعادة الشحن تستخدم نبضات واهتزازات سريعة (العلاج بالتدليك الاختراقي) لإرخاء العضلات المشدودة وتخفيف الألم وتحسين الدورة الدموية.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تخفيف الألم المزمن</li>
-            <li><i class="fas fa-check"></i> نهج خالٍ من الأدوية</li>
-            <li><i class="fas fa-check"></i> نتائج طويلة الأمد</li>
+            <li><i class="fas fa-check"></i> إرخاء العضلات المشدودة</li>
+            <li><i class="fas fa-check"></i> تخفيف الشد العضلي</li>
+            <li><i class="fas fa-check"></i> تحسين الدورة الدموية</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -406,19 +403,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-img-wrap">
-          <img src="assets/images/device_7.jpeg" alt="تحفيز العضلات" />
+          <img src="assets/images/tens-therapy.jpeg" alt="جهاز التنس" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
           <div class="service-icon"><i class="fas fa-charging-station"></i></div>
-          <h3>تحفيز العضلات</h3>
-          <p>التحفيز الكهربائي العصبي العضلي لإعادة تنشيط العضلات الضعيفة وتحسين التحكم الحركي.</p>
+          <h3>جهاز التنس (التحفيز الكهربائي)</h3>
+          <p>يستخدم تيارات كهربائية منخفضة الجهد تُوصَّل عبر أقطاب لاصقة على الجلد للمساعدة في إدارة الألم بشكل فعّال وآمن.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تنشيط العضلات</li>
-            <li><i class="fas fa-check"></i> بناء القوة</li>
-            <li><i class="fas fa-check"></i> إعادة تعليم الأعصاب</li>
+            <li><i class="fas fa-check"></i> تخفيف الألم فوريًا</li>
+            <li><i class="fas fa-check"></i> نهج خالٍ من الأدوية</li>
+            <li><i class="fas fa-check"></i> آمن وسهل الاستخدام</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -426,19 +423,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="80">
         <div class="service-img-wrap">
-          <img src="assets/images/device_8.jpeg" alt="العلاج اليدوي" />
+          <img src="assets/images/cryotherapy.jpeg" alt="العلاج بالتبريد" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
-          <div class="service-icon"><i class="fas fa-hands"></i></div>
-          <h3>العلاج اليدوي</h3>
-          <p>تقنيات التحريك والمعالجة اليدوية لاستعادة حركة المفاصل وتخفيف آلام الجهاز العضلي الهيكلي.</p>
+          <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+          <h3>العلاج بالتبريد (كرايوثيرابي)</h3>
+          <p>يستخدم أجهزة تفتيت الدهون بالتبريد مثل تقنيات CoolSculpting وCryoskin لاستهداف الدهون العنيدة وتحسين شكل الجسم دون جراحة.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تحريك المفاصل</li>
-            <li><i class="fas fa-check"></i> تحرير الأنسجة الرخوة</li>
-            <li><i class="fas fa-check"></i> تحسين المرونة</li>
+            <li><i class="fas fa-check"></i> تفتيت الدهون الموضعية</li>
+            <li><i class="fas fa-check"></i> نحت الجسم</li>
+            <li><i class="fas fa-check"></i> دون تدخل جراحي</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -446,19 +443,19 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="160">
         <div class="service-img-wrap">
-          <img src="assets/images/device_9.jpeg" alt="الوخز الجاف" />
+          <img src="assets/images/cavitation.jpeg" alt="الكافيتيشن" />
           <div class="service-overlay">
             <a href="#contact" class="service-cta-btn"><i class="fas fa-calendar-check"></i> احجز الآن</a>
           </div>
         </div>
         <div class="service-body">
-          <div class="service-icon"><i class="fas fa-syringe"></i></div>
-          <h3>الوخز الجاف</h3>
-          <p>وخز دقيق لنقاط الزناد لتحرير التوتر العضلي اللفافي والقضاء على أنماط الألم العضلي العميقة.</p>
+          <div class="service-icon"><i class="fas fa-water"></i></div>
+          <h3>الكافيتيشن</h3>
+          <p>جهاز تجميلي غير جراحي يستخدم موجات صوتية منخفضة التردد (30-80 كيلوهرتز) لتفتيت الدهون الموضعية وتقليل السيلوليت ونحت الجسم.</p>
           <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> تحرير نقاط الزناد</li>
-            <li><i class="fas fa-check"></i> تخفيف اللفافة العضلية</li>
-            <li><i class="fas fa-check"></i> تخفيف سريع للألم</li>
+            <li><i class="fas fa-check"></i> تقليل السيلوليت</li>
+            <li><i class="fas fa-check"></i> نحت الجسم</li>
+            <li><i class="fas fa-check"></i> نتائج غير جراحية</li>
           </ul>
           <a href="#contact" class="service-link">اعرف المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
@@ -486,7 +483,7 @@
         </div>
         <div class="doctor-body">
           <h3 class="doctor-name">د. عبد المنعم كمال</h3>
-          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> أخصائي علاج طبيعي أول</p>
+          <p class="doctor-spec"><i class="fas fa-graduation-cap"></i> بكالوريوس علاج طبيعي - جامعة 6 أكتوبر</p>
           <p class="doctor-bio">متخصص في إعادة التأهيل العضلي الهيكلي والعلاج الكهربائي المتقدم، مع خبرة واسعة في إدارة الآلام المزمنة وإصابات الرياضيين.</p>
           <div class="doctor-tags">
             <span>عضلي هيكلي</span>
@@ -508,7 +505,7 @@
         </div>
         <div class="doctor-body">
           <h3 class="doctor-name">د. منة عماد</h3>
-          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> أخصائية إعادة التأهيل</p>
+          <p class="doctor-spec"><i class="fas fa-graduation-cap"></i> بكالوريوس علاج طبيعي - جامعة فاروس</p>
           <p class="doctor-bio">متخصصة في إعادة التأهيل بعد الجراحة وعلاج الجهاز العصبي، تساعد المرضى على استعادة استقلاليتهم الوظيفية الكاملة.</p>
           <div class="doctor-tags">
             <span>ما بعد الجراحة</span>
@@ -530,7 +527,7 @@
         </div>
         <div class="doctor-body">
           <h3 class="doctor-name">د. باسم الفلالة</h3>
-          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> أخصائي العلاج الرياضي واليدوي</p>
+          <p class="doctor-spec"><i class="fas fa-graduation-cap"></i> بكالوريوس علاج طبيعي - جامعة 6 أكتوبر</p>
           <p class="doctor-bio">خبير في إعادة تأهيل الأداء الرياضي وتقنيات العلاج اليدوي، يعمل مع الرياضيين المحترفين والأفراد النشطين.</p>
           <div class="doctor-tags">
             <span>يدوي</span>
@@ -552,7 +549,7 @@
         </div>
         <div class="doctor-body">
           <h3 class="doctor-name">د. همت حسن</h3>
-          <p class="doctor-spec"><i class="fas fa-stethoscope"></i> أخصائية إدارة الألم</p>
+          <p class="doctor-spec"><i class="fas fa-graduation-cap"></i> بكالوريوس علاج طبيعي - جامعة 6 أكتوبر</p>
           <p class="doctor-bio">متخصصة في إدارة الألم المزمن والوخز الجاف والموجات فوق الصوتية العلاجية للحالات العضلية الهيكلية المعقدة.</p>
           <div class="doctor-tags">
             <span>إدارة الألم</span>
@@ -583,66 +580,66 @@
 
     <div class="gallery-grid" id="galleryGrid">
       <div class="gallery-item gallery-item-lg" data-aos="fade-up" data-aos-delay="0">
-        <img src="assets/images/device_1.jpeg" alt="معدات علاج 1" />
+        <img src="assets/images/shockwave-therapy.jpeg" alt="جهاز العلاج بموجات الصدمة" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(0)"><i class="fas fa-expand"></i></button>
-          <p>معدات علاج متطورة</p>
+          <p>العلاج بموجات الصدمة</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="60">
-        <img src="assets/images/device_2.jpeg" alt="معدات علاج 2" />
+        <img src="assets/images/low-level-laser-therapy.jpeg" alt="جهاز الليزر منخفض الشدة" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(1)"><i class="fas fa-expand"></i></button>
-          <p>جلسة إعادة تأهيل</p>
+          <p>العلاج بالليزر منخفض الشدة</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="120">
-        <img src="assets/images/device_3.jpeg" alt="معدات علاج 3" />
+        <img src="assets/images/ultrasound-therapy.jpeg" alt="جهاز الموجات فوق الصوتية" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(2)"><i class="fas fa-expand"></i></button>
-          <p>جهاز الموجات فوق الصوتية</p>
+          <p>العلاج بالموجات فوق الصوتية</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="180">
-        <img src="assets/images/device_4.jpeg" alt="معدات علاج 4" />
+        <img src="assets/images/heat-pads.jpeg" alt="وسائد التدفئة" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(3)"><i class="fas fa-expand"></i></button>
-          <p>محطة التأهيل الرياضي</p>
+          <p>وسائد التدفئة</p>
         </div>
       </div>
       <div class="gallery-item gallery-item-lg" data-aos="fade-up" data-aos-delay="240">
-        <img src="assets/images/device_5.jpeg" alt="معدات علاج 5" />
+        <img src="assets/images/traction-therapy.jpeg" alt="جهاز علاج الشد" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(4)"><i class="fas fa-expand"></i></button>
-          <p>تعافٍ ما بعد الجراحة</p>
+          <p>علاج الشد</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-        <img src="assets/images/device_6.jpeg" alt="معدات علاج 6" />
+        <img src="assets/images/massage-gun.jpeg" alt="مسدس التدليك" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(5)"><i class="fas fa-expand"></i></button>
-          <p>جهاز إدارة الألم</p>
+          <p>مسدس التدليك</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="360">
-        <img src="assets/images/device_7.jpeg" alt="معدات علاج 7" />
+        <img src="assets/images/tens-therapy.jpeg" alt="جهاز التنس" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(6)"><i class="fas fa-expand"></i></button>
-          <p>جهاز تحفيز العضلات</p>
+          <p>جهاز التنس</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="420">
-        <img src="assets/images/device_8.jpeg" alt="معدات علاج 8" />
+        <img src="assets/images/cryotherapy.jpeg" alt="جهاز العلاج بالتبريد" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(7)"><i class="fas fa-expand"></i></button>
-          <p>أدوات العلاج اليدوي</p>
+          <p>العلاج بالتبريد</p>
         </div>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="480">
-        <img src="assets/images/device_9.jpeg" alt="معدات علاج 9" />
+        <img src="assets/images/cavitation.jpeg" alt="جهاز الكافيتيشن" />
         <div class="gallery-overlay">
           <button class="gallery-zoom" onclick="openLightbox(8)"><i class="fas fa-expand"></i></button>
-          <p>معدات الوخز الجاف</p>
+          <p>الكافيتيشن</p>
         </div>
       </div>
     </div>
@@ -696,7 +693,6 @@
             <div class="contact-detail">
               <strong>ساعات العمل</strong>
               <span>السبت – الخميس: 10:00 ص – 8:00 م</span>
-              <span>الجمعة: 2:00 م – 9:00 م</span>
             </div>
           </div>
 
@@ -745,15 +741,15 @@
             <label for="service">الخدمة المطلوبة</label>
             <select id="service" name="service" required>
               <option value="" disabled selected>اختر الخدمة</option>
-              <option>العلاج الكهربائي</option>
-              <option>العلاج بالليزر</option>
+              <option>العلاج بموجات الصدمة</option>
+              <option>العلاج بالليزر منخفض الشدة</option>
               <option>العلاج بالموجات فوق الصوتية</option>
-              <option>إعادة التأهيل الرياضي</option>
-              <option>إعادة التأهيل بعد الجراحة</option>
-              <option>إدارة الألم</option>
-              <option>تحفيز العضلات</option>
-              <option>العلاج اليدوي</option>
-              <option>الوخز الجاف</option>
+              <option>وسائد التدفئة</option>
+              <option>علاج الشد</option>
+              <option>مسدس التدليك</option>
+              <option>جهاز التنس (التحفيز الكهربائي)</option>
+              <option>العلاج بالتبريد (كرايوثيرابي)</option>
+              <option>الكافيتيشن</option>
             </select>
           </div>
           <div class="form-group">
@@ -775,7 +771,7 @@
       <h3 class="map-title"><i class="fas fa-map-marker-alt"></i> موقعنا</h3>
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.1234567890!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjkiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sar!2seg!4v1234567890!5m2!1sar!2seg"
+          src="https://www.google.com/maps?q=30.884174,30.668610&hl=ar&z=16&output=embed"
           width="100%"
           height="400"
           style="border:0;"
@@ -785,7 +781,7 @@
           title="موقع مركز النخبة للعلاج الطبيعي للسمنة والنحافة">
         </iframe>
         <div class="map-link-overlay">
-          <a href="https://maps.app.goo.gl/X6ZkuvJEQuM3YxNU8" target="_blank" rel="noopener" class="map-open-btn">
+          <a href="https://maps.app.goo.gl/N2DwTGgZwhMLimcBA" target="_blank" rel="noopener" class="map-open-btn">
             <i class="fas fa-external-link-alt"></i> افتح في خرائط جوجل
           </a>
         </div>
@@ -801,10 +797,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
-            <div class="logo-text">
-              <span class="logo-primary">مركز النخبة</span>
-            </div>
+            <img src="assets/images/logo-horizontal.png" alt="مركز النخبة للعلاج الطبيعي وإدارة الوزن" class="footer-logo-img" />
           </div>
           <p class="footer-desc">مركز متخصص في العلاج الطبيعي للسمنة والنحافة، ملتزم باستعادة حركتك وتخفيف ألمك ومساعدتك على حياة أكثر صحة وحيوية.</p>
           <div class="footer-socials">
@@ -828,12 +821,12 @@
         <div class="footer-links-col">
           <h4>خدماتنا</h4>
           <ul>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج الكهربائي</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج بالليزر</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> التأهيل الرياضي</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> إدارة الألم</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج اليدوي</a></li>
-            <li><a href="#services"><i class="fas fa-chevron-left"></i> الوخز الجاف</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج بموجات الصدمة</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج بالليزر منخفض الشدة</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج بالموجات فوق الصوتية</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> علاج الشد</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> العلاج بالتبريد</a></li>
+            <li><a href="#services"><i class="fas fa-chevron-left"></i> الكافيتيشن</a></li>
           </ul>
         </div>
 
@@ -853,8 +846,7 @@
           <div class="footer-contact-item">
             <i class="fas fa-clock"></i>
             <div>
-              <span>السبت – الخميس: 10ص – 8م</span><br>
-              <span>الجمعة: 2م – 9م</span>
+              <span>السبت – الخميس: 10ص – 8م</span>
             </div>
           </div>
           <a href="https://wa.me/201095408771?text=مرحباً%2C%20أود%20حجز%20موعد." class="footer-whatsapp-btn" target="_blank" rel="noopener">
