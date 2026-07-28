@@ -787,6 +787,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-bottom-inner p { color: var(--gray-400); font-size: .82rem; }
 .footer-disclaimer { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
 .footer-disclaimer i { color: var(--blue-primary); }
+.footer-credit a { color: var(--blue-primary); text-decoration: none; }
+.footer-credit a:hover { text-decoration: underline; }
 
 /* ===== BACK TO TOP ===== */
 .back-to-top {
