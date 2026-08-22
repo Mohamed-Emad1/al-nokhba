@@ -109,6 +109,7 @@ const galleryImages = [
   { src: 'assets/images/cavitation.jpeg', label: 'الكافيتيشن' },
   { src: 'assets/images/sports-rehab-unit-1.jpeg', label: 'وحدة تأهيل رياضي متكاملة' },
   { src: 'assets/images/sports-rehab-unit-2.jpeg', label: 'وحدة تأهيل رياضي متكاملة' },
+  { src: 'assets/images/cupping-therapy.jpeg', label: 'جلسات الحجامة والريكفري' },
   { src: 'assets/images/office_1.jpeg', label: 'عيادتنا' },
   { src: 'assets/images/office_2.jpeg', label: 'عيادتنا' },
 ];
@@ -273,4 +274,202 @@ document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initCounters();
   initTestimonials();
+  initGalleryLoop();
 });
+
+/* ===== 3D GALLERY CAROUSEL ===== */
+function initGalleryLoop() {
+  const container = document.querySelector('.gallery-loop-container');
+  const cards = Array.from(document.querySelectorAll('.cards .card'));
+  const prevBtn = document.querySelector('.gallery-action-btn.prev');
+  const nextBtn = document.querySelector('.gallery-action-btn.next');
+
+  if (!container || cards.length === 0) return;
+
+  const total = cards.length;
+  let currentIndex = 0;
+  let animState = { index: 0 };
+  let isDragging = false;
+  let startX = 0;
+  let dragDistance = 0;
+
+  function updateCards(val) {
+    const isMobile = window.innerWidth <= 640;
+    const isTablet = window.innerWidth <= 1024;
+    const spacingX = isMobile ? 130 : isTablet ? 180 : 240;
+
+    cards.forEach((card, i) => {
+      let diff = (i - val) % total;
+      if (diff > total / 2) diff -= total;
+      if (diff < -total / 2) diff += total;
+
+      const absDiff = Math.abs(diff);
+
+      if (absDiff > 3.2) {
+        card.style.opacity = '0';
+        card.style.pointerEvents = 'none';
+        card.style.transform = `translate3d(${diff > 0 ? 500 : -500}px, -50%, -300px) scale(0.5)`;
+        card.style.zIndex = '0';
+        return;
+      }
+
+      const x = diff * spacingX;
+      const z = -absDiff * 80;
+      const rotateY = diff * -10;
+      const scale = Math.max(0.6, 1 - absDiff * 0.14);
+      const opacity = Math.max(0, 1 - absDiff * 0.25);
+      const zIndex = Math.round(100 - absDiff * 20);
+
+      card.style.opacity = opacity;
+      card.style.zIndex = zIndex;
+      card.style.pointerEvents = 'auto';
+      card.style.transform = `translate3d(calc(-50% + ${x}px), -50%, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+
+      if (absDiff < 0.4) {
+        card.classList.add('is-active');
+      } else {
+        card.classList.remove('is-active');
+      }
+    });
+  }
+
+  function goTo(targetIndex, duration = 0.55) {
+    if (typeof gsap !== 'undefined') {
+      gsap.killTweensOf(animState);
+      gsap.to(animState, {
+        index: targetIndex,
+        duration: duration,
+        ease: 'power2.out',
+        onUpdate: () => updateCards(animState.index),
+        onComplete: () => {
+          currentIndex = ((Math.round(targetIndex) % total) + total) % total;
+          animState.index = currentIndex;
+          updateCards(currentIndex);
+        }
+      });
+    } else {
+      currentIndex = ((Math.round(targetIndex) % total) + total) % total;
+      animState.index = currentIndex;
+      updateCards(currentIndex);
+    }
+  }
+
+  function goNext() {
+    goTo(animState.index + 1);
+  }
+
+  function goPrev() {
+    goTo(animState.index - 1);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      goNext();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      goPrev();
+    });
+  }
+
+  // Click on card: center opens lightbox, side card flies to center
+  cards.forEach((card, i) => {
+    card.addEventListener('click', (e) => {
+      let diff = (i - currentIndex) % total;
+      if (diff > total / 2) diff -= total;
+      if (diff < -total / 2) diff += total;
+
+      if (Math.abs(diff) < 0.4) {
+        openLightbox(i);
+      } else {
+        e.preventDefault();
+        e.stopPropagation();
+        goTo(currentIndex + diff);
+      }
+    });
+  });
+
+  // Mouse wheel
+  let wheelLock = false;
+  container.addEventListener('wheel', (e) => {
+    const delta = e.deltaY || e.deltaX;
+    if (Math.abs(delta) > 15) {
+      e.preventDefault();
+      if (!wheelLock) {
+        if (delta > 0) goNext();
+        else goPrev();
+        wheelLock = true;
+        setTimeout(() => { wheelLock = false; }, 260);
+      }
+    }
+  }, { passive: false });
+
+  // Touch Swipe
+  let touchStartX = 0;
+  let touchStartTime = 0;
+
+  container.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    const time = Date.now() - touchStartTime;
+    if (Math.abs(diff) > 30 && time < 600) {
+      if (diff > 0) goNext();
+      else goPrev();
+    }
+  }, { passive: true });
+
+  // Mouse Drag
+  container.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.gallery-action-btn')) return;
+    isDragging = true;
+    startX = e.clientX;
+    dragDistance = 0;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    dragDistance = startX - e.clientX;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    if (Math.abs(dragDistance) > 35) {
+      if (dragDistance > 0) goNext();
+      else goPrev();
+    }
+  });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    const rect = container.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!isVisible) return;
+
+    if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
+      e.preventDefault();
+      goNext();
+    } else if (e.key === 'ArrowRight' || e.key === 'PageUp') {
+      e.preventDefault();
+      goPrev();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    updateCards(animState.index);
+  });
+
+  // Initial draw
+  updateCards(0);
+}
