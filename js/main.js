@@ -139,21 +139,28 @@ function changeLightbox(dir) {
 
 document.addEventListener('keydown', (e) => {
   const lb = document.getElementById('lightbox');
-  if (!lb.classList.contains('active')) return;
+  if (!lb || !lb.classList.contains('active')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') changeLightbox(1);
   if (e.key === 'ArrowLeft') changeLightbox(-1);
 });
 
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-});
+const lightboxEl = document.getElementById('lightbox');
+if (lightboxEl) {
+  lightboxEl.addEventListener('click', (e) => {
+    if (e.target === lightboxEl) closeLightbox();
+  });
+}
 
 /* ===== TESTIMONIALS SLIDER ===== */
 function initTestimonials() {
   const track = document.getElementById('testimonialsTrack');
-  const cards = track.querySelectorAll('.testimonial-card');
   const dotsContainer = document.getElementById('tDots');
+  const nextBtn = document.getElementById('tNext');
+  const prevBtn = document.getElementById('tPrev');
+  if (!track || !dotsContainer) return;
+  const cards = track.querySelectorAll('.testimonial-card');
+  if (cards.length === 0) return;
   const total = cards.length;
   let perView = getPerView();
   let current = 0;
@@ -190,8 +197,8 @@ function initTestimonials() {
   function next() { goTo(current >= maxIndex() ? 0 : current + 1); }
   function prev() { goTo(current <= 0 ? maxIndex() : current - 1); }
 
-  document.getElementById('tNext').addEventListener('click', () => { next(); resetAuto(); });
-  document.getElementById('tPrev').addEventListener('click', () => { prev(); resetAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
 
   function startAuto() { autoInterval = setInterval(next, 5000); }
   function resetAuto() { clearInterval(autoInterval); startAuto(); }
@@ -271,205 +278,199 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== INIT ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  initAOS();
-  initCounters();
-  initTestimonials();
-  initGalleryLoop();
+  [initAOS, initCounters, initTestimonials, initGalleryLoop].forEach(init => {
+    try { init(); } catch (err) { console.error(init.name + ' failed:', err); }
+  });
 });
 
-/* ===== 3D GALLERY CAROUSEL ===== */
+/* ===== GALLERY — SEAMLESS GSAP LOOP ===== */
 function initGalleryLoop() {
   const container = document.querySelector('.gallery-loop-container');
+  const list = document.querySelector('.cards');
   const cards = Array.from(document.querySelectorAll('.cards .card'));
   const prevBtn = document.querySelector('.gallery-action-btn.prev');
   const nextBtn = document.querySelector('.gallery-action-btn.next');
 
-  if (!container || cards.length === 0) return;
+  if (!container || !list || cards.length === 0) return;
 
-  const total = cards.length;
-  let currentIndex = 0;
-  let animState = { index: 0 };
-  let isDragging = false;
-  let startX = 0;
-  let dragDistance = 0;
-
-  function updateCards(val) {
-    const isMobile = window.innerWidth <= 640;
-    const isTablet = window.innerWidth <= 1024;
-    const spacingX = isMobile ? 130 : isTablet ? 180 : 240;
-
-    cards.forEach((card, i) => {
-      let diff = (i - val) % total;
-      if (diff > total / 2) diff -= total;
-      if (diff < -total / 2) diff += total;
-
-      const absDiff = Math.abs(diff);
-
-      if (absDiff > 3.2) {
-        card.style.opacity = '0';
-        card.style.pointerEvents = 'none';
-        card.style.transform = `translate3d(${diff > 0 ? 500 : -500}px, -50%, -300px) scale(0.5)`;
-        card.style.zIndex = '0';
-        return;
-      }
-
-      const x = diff * spacingX;
-      const z = -absDiff * 80;
-      const rotateY = diff * -10;
-      const scale = Math.max(0.6, 1 - absDiff * 0.14);
-      const opacity = Math.max(0, 1 - absDiff * 0.25);
-      const zIndex = Math.round(100 - absDiff * 20);
-
-      card.style.opacity = opacity;
-      card.style.zIndex = zIndex;
-      card.style.pointerEvents = 'auto';
-      card.style.transform = `translate3d(calc(-50% + ${x}px), -50%, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
-
-      if (absDiff < 0.4) {
-        card.classList.add('is-active');
-      } else {
-        card.classList.remove('is-active');
-      }
-    });
-  }
-
-  function goTo(targetIndex, duration = 0.55) {
-    if (typeof gsap !== 'undefined') {
-      gsap.killTweensOf(animState);
-      gsap.to(animState, {
-        index: targetIndex,
-        duration: duration,
-        ease: 'power2.out',
-        onUpdate: () => updateCards(animState.index),
-        onComplete: () => {
-          currentIndex = ((Math.round(targetIndex) % total) + total) % total;
-          animState.index = currentIndex;
-          updateCards(currentIndex);
-        }
-      });
-    } else {
-      currentIndex = ((Math.round(targetIndex) % total) + total) % total;
-      animState.index = currentIndex;
-      updateCards(currentIndex);
-    }
-  }
-
-  function goNext() {
-    goTo(animState.index + 1);
-  }
-
-  function goPrev() {
-    goTo(animState.index - 1);
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      goNext();
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      goPrev();
-    });
-  }
-
-  // Click on card: center opens lightbox, side card flies to center
+  // Open the lightbox when a card is clicked (unless the user was dragging)
+  let suppressClick = false;
   cards.forEach((card, i) => {
-    card.addEventListener('click', (e) => {
-      let diff = (i - currentIndex) % total;
-      if (diff > total / 2) diff -= total;
-      if (diff < -total / 2) diff += total;
-
-      if (Math.abs(diff) < 0.4) {
-        openLightbox(i);
-      } else {
-        e.preventDefault();
-        e.stopPropagation();
-        goTo(currentIndex + diff);
-      }
+    card.addEventListener('click', () => {
+      if (suppressClick) return;
+      openLightbox(i);
     });
   });
 
-  // Mouse wheel
+  // --- Fallback when GSAP failed to load: plain horizontal scroller ---
+  if (typeof gsap === 'undefined') {
+    container.classList.add('no-gsap');
+    const step = () => (cards[0].offsetWidth + 20);
+    if (nextBtn) nextBtn.addEventListener('click', () => list.scrollBy({ left: -step(), behavior: 'smooth' }));
+    if (prevBtn) prevBtn.addEventListener('click', () => list.scrollBy({ left: step(), behavior: 'smooth' }));
+    return;
+  }
+
+  const spacing = 0.1;                          // time between two consecutive cards
+  const snap = gsap.utils.snap(spacing);
+  const seamlessLoop = buildSeamlessLoop(cards, spacing);
+
+  // Start far from 0 so scrubbing backwards never runs out of timeline.
+  const offset = seamlessLoop.duration() * 100;
+  let playhead = snap(offset);
+  seamlessLoop.totalTime(playhead);
+
+  const scrub = gsap.to(seamlessLoop, {
+    totalTime: playhead,
+    duration: 0.55,
+    ease: 'power3',
+    paused: true,
+    onUpdate: refreshCardStates,
+    onComplete: refreshCardStates
+  });
+
+  function scrubTo(totalTime) {
+    playhead = Math.max(spacing, totalTime);
+    scrub.vars.totalTime = playhead;
+    scrub.invalidate().restart();
+  }
+
+  function goNext() { scrubTo(playhead + spacing); }
+  function goPrev() { scrubTo(playhead - spacing); }
+
+  // Highlight the card closest to the centre, and only let visible cards be clicked
+  function refreshCardStates() {
+    let front = null;
+    let frontScale = 0;
+    cards.forEach(card => {
+      const scale = Number(gsap.getProperty(card, 'scale')) || 0;
+      const opacity = Number(gsap.getProperty(card, 'opacity')) || 0;
+      card.style.pointerEvents = opacity > 0.35 ? 'auto' : 'none';
+      if (scale > frontScale) { frontScale = scale; front = card; }
+    });
+    cards.forEach(card => card.classList.toggle('is-active', card === front && frontScale > 0.8));
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); goNext(); });
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); goPrev(); });
+
+  // Horizontal trackpad / shift+wheel only — vertical wheel keeps scrolling the page
   let wheelLock = false;
   container.addEventListener('wheel', (e) => {
-    const delta = e.deltaY || e.deltaX;
-    if (Math.abs(delta) > 15) {
-      e.preventDefault();
-      if (!wheelLock) {
-        if (delta > 0) goNext();
-        else goPrev();
-        wheelLock = true;
-        setTimeout(() => { wheelLock = false; }, 260);
-      }
-    }
+    const horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY) * 1.2;
+    if (!horizontal && !e.shiftKey) return;
+    const delta = horizontal ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 12) return;
+    e.preventDefault();
+    if (wheelLock) return;
+    wheelLock = true;
+    delta > 0 ? goNext() : goPrev();
+    setTimeout(() => { wheelLock = false; }, 240);
   }, { passive: false });
 
-  // Touch Swipe
+  // Touch swipe — drag the loop with the finger
   let touchStartX = 0;
-  let touchStartTime = 0;
+  let touchStartPlayhead = 0;
+  const dragRatio = () => spacing / Math.max(120, cards[0].offsetWidth * 0.55);
 
   container.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
-    touchStartTime = Date.now();
+    touchStartPlayhead = playhead;
   }, { passive: true });
 
-  container.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-    const time = Date.now() - touchStartTime;
-    if (Math.abs(diff) > 30 && time < 600) {
-      if (diff > 0) goNext();
-      else goPrev();
-    }
+  container.addEventListener('touchmove', (e) => {
+    const dx = touchStartX - e.touches[0].clientX;
+    scrubTo(touchStartPlayhead + dx * dragRatio());
   }, { passive: true });
 
-  // Mouse Drag
+  container.addEventListener('touchend', () => scrubTo(snap(playhead)));
+
+  // Mouse drag
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartPlayhead = 0;
+
   container.addEventListener('mousedown', (e) => {
     if (e.target.closest('.gallery-action-btn')) return;
     isDragging = true;
-    startX = e.clientX;
-    dragDistance = 0;
+    suppressClick = false;
+    dragStartX = e.clientX;
+    dragStartPlayhead = playhead;
+    e.preventDefault();
   });
 
   window.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
-    dragDistance = startX - e.clientX;
+    const dx = dragStartX - e.clientX;
+    if (Math.abs(dx) > 6) suppressClick = true;
+    scrubTo(dragStartPlayhead + dx * dragRatio());
   });
 
-  window.addEventListener('mouseup', (e) => {
+  window.addEventListener('mouseup', () => {
     if (!isDragging) return;
     isDragging = false;
-    if (Math.abs(dragDistance) > 35) {
-      if (dragDistance > 0) goNext();
-      else goPrev();
-    }
+    scrubTo(snap(playhead));
+    setTimeout(() => { suppressClick = false; }, 0);
   });
 
-  // Keyboard navigation
+  // Keyboard, only while the gallery is on screen and the lightbox is closed
   window.addEventListener('keydown', (e) => {
+    const lb = document.getElementById('lightbox');
+    if (lb && lb.classList.contains('active')) return;
     const rect = container.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-    if (!isVisible) return;
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
 
-    if (e.key === 'ArrowLeft' || e.key === 'PageDown') {
-      e.preventDefault();
-      goNext();
-    } else if (e.key === 'ArrowRight' || e.key === 'PageUp') {
-      e.preventDefault();
-      goPrev();
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goNext(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); goPrev(); }
+  });
+
+  refreshCardStates();
+
+  /* Builds an infinitely repeating timeline in which every card flies across the
+     screen, growing as it reaches the centre and shrinking as it leaves.
+     Adapted from the GSAP seamless-loop technique. */
+  function buildSeamlessLoop(items, spacing) {
+    const overlap = Math.ceil(1 / spacing);                 // extra copies on both ends
+    const startTime = items.length * spacing + 0.5;         // where the seamless loop starts
+    const loopTime = (items.length + overlap) * spacing + 1; // where it wraps back
+    const rawSequence = gsap.timeline({ paused: true });
+    const loop = gsap.timeline({
+      paused: true,
+      repeat: -1,
+      onRepeat() { this._time === this._dur && (this._tTime += this._dur - 0.01); }
+    });
+    const l = items.length + overlap * 2;
+
+    gsap.set(items, { xPercent: 300, opacity: 0, scale: 0 });
+
+    for (let i = 0; i < l; i++) {
+      const item = items[i % items.length];
+      const time = i * spacing;
+      rawSequence
+        .fromTo(item,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1, opacity: 1, zIndex: 100,
+            duration: 0.5, yoyo: true, repeat: 1,
+            ease: 'power1.in', immediateRender: false
+          }, time)
+        .fromTo(item,
+          { xPercent: 300 },
+          { xPercent: -300, duration: 1, ease: 'none', immediateRender: false },
+          time);
     }
-  });
 
-  window.addEventListener('resize', () => {
-    updateCards(animState.index);
-  });
-
-  // Initial draw
-  updateCards(0);
+    rawSequence.time(startTime);
+    loop
+      .to(rawSequence, { time: loopTime, duration: loopTime - startTime, ease: 'none' })
+      .fromTo(rawSequence,
+        { time: overlap * spacing + 1 },
+        {
+          time: startTime,
+          duration: startTime - (overlap * spacing + 1),
+          immediateRender: false,
+          ease: 'none'
+        });
+    return loop;
+  }
 }
